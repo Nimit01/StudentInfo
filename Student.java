@@ -45,11 +45,11 @@ class Student {
     private long validatePRN(long prn) {
         try {
             if (prn <= 0) throw new IllegalArgumentException("PRN must be positive");
-            if (String.valueOf(prn).length() != 10) throw new IllegalArgumentException("PRN must be exactly 10 digits long");
-            if (prn < 1000000000L || prn > 9999999999L) throw new IllegalArgumentException("PRN must be within valid range");
+            if (String.valueOf(prn).length() != 11) throw new IllegalArgumentException("PRN must be exactly 10 digits long");
+            if (prn < 10000000000L || prn > 999999999999L) throw new IllegalArgumentException("PRN must be within valid range");
         } catch (IllegalArgumentException e) {
             System.out.println("Invalid PRN: " + e.getMessage());
-            return 9999999999L;
+            return 999999999999L;
         }
         return prn;
     }
